@@ -8,8 +8,11 @@ public class ConditionRun {
 //		ce.ex1();
 //		ce.ex2();
 //		ce.ex3();
-		ce.ex4();
+//		ce.ex4();
 		
+		//과제
+//		ce.ex5();
+		ce.ex6();
 	}
 
 }

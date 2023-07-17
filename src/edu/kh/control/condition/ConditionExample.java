@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class ConditionExample {
 
+	Scanner sc = new Scanner(System.in);
+
 	public void ex1() {
 
 		// if문
@@ -97,32 +99,116 @@ public class ConditionExample {
 		System.out.print("temp : ");
 		int temp = sc.nextInt();
 
+		String season; // 아래 조건문 수행 결과를 저장할 변수 선언
+
 		if (month == 1 || month == 2 || month == 12) {
+
+			season = "겨울";
+
 			if (temp <= -15) {
-				System.out.println("한파 경보");
-			} else if (temp > -15 && temp <= -12) {
-				System.out.println("한파 주의보");
+				// season = "겨울 한파 경보";
+				season += " 한파 경보";
+				// season = season + "한파 경보" :: 문자열 이어쓰기
+			} else if (temp <= -12) { // 순서 주의!
+				season += " 한파 주의보 ";
 			}
-			System.out.println("겨울");
-		} else if (month == 3 || month == 4 || month == 5) {
 
-			System.out.println("봄");
+		} else if (month >= 3 && month <= 5) {
 
-		} else if (month == 6 || month == 7 || month == 8) {
+			season = "봄";
+
+		} else if (month >= 6 && month <= 8) {
+
+			season = "여름";
 
 			if (temp >= 35) {
-				System.out.println("폭염 경보");
-			} else if (temp >= 33 && temp < 35) {
-				System.out.println("폭염 주의보");
+				season += " 폭염 경보";
+			} else if (temp >= 33) {
+				season += " 폭염 주의보";
 			}
-			System.out.println("여름");
-		} else if (month == 9 || month == 10 || month == 11) {
 
-			System.out.println("가을");
+		} else if (month >= 9 && month <= 11) {
+
+			season = "가을";
+
 		} else {
-			System.out.println("해당하는 계절이 없습니다.");
+
+			season = "해당하는 계절이 없습니다.";
+
 		}
 
+		System.out.println(season);
 	}
 
+	public void ex5() {
+
+		System.out.print("나이 입력 : ");
+		int age = sc.nextInt();
+
+		String people;
+
+		if (age <= 13) {
+			people = "어린이";
+		} else if (age <= 19) {
+			people = "청소년";
+		} else {
+			people = "성인";
+		}
+
+		people += "입니다.";
+
+		System.out.println(people);
+
+	}
+	
+	public void ex6() {
+		
+		System.out.print("점수 : ");
+		int score = sc.nextInt();
+				
+		String score1 ;
+		
+		if(score > 100 || score < 0) {
+		 score1 = "잘못 입력하셨습니다.";
+		}else if (score >= 90) {
+			score1 = "A";
+		}else if (score >= 80) {
+			score1 = "B";
+		}else if (score >= 70) {
+			score1 = "C";
+		}else if (score >= 60) {
+			score1 = "D";
+		}else {
+			score1 = "F";
+		}
+		
+		System.out.println(score1);
+	}
+
+	
+	public void ex7() {
+	
+		System.out.print("나이 , 키  : ");
+		int age = sc.nextInt();
+		Double height = sc.nextDouble();
+		
+		String warning ;
+		
+		if(age <0 || age > 100) {
+			
+			warning = "잘못 입력 하셨습니다.";
+			
+		}else if ( age < 12 ) {
+			
+			warning = "적정 연령이 아닙니다.";
+			
+		}else if ( height < 140.0) {
+			
+			warning = "적정 키가 아닙니다.";
+			
+		}
+		
+		
+		
+	}
 }
