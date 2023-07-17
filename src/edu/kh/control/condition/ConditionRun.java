@@ -11,8 +11,10 @@ public class ConditionRun {
 //		ce.ex4();
 		
 		//과제
-//		ce.ex5();
-		ce.ex6();
+//		ce.assignment1();
+//		ce.assignment2();
+//		ce.assignment3();
+		ce.assignment4();
 	}
 
 }
