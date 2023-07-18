@@ -18,14 +18,7 @@ public class LoopPractice {
 				
 				System.out.print(i+1+" ");				
 			}
-		}
-			
-	
-		
-		
-		
-		
-		
+		}		
 	}
 	
 	public void practice2() {
@@ -67,34 +60,43 @@ public class LoopPractice {
 		System.out.print("첫 번째 숫자 : ");
 		int first = sc.nextInt();
 		
-		System.out.print("두 번째 숫자 : ");
-		int second = sc.nextInt();
-		
-		if( first < 1 && second <1 ) {
+		if( first < 1 ) {
 			System.out.println("1 이상의 숫자를 입력해주세요.");		
 		}else {
-			if(first < second) {
-				for( int i = first ; i <= second; i++) {
-					System.out.print(i+" ");
-				}
+			System.out.print("두 번째 숫자 : ");
+			int second = sc.nextInt();
+			
+			if( second < 1 ) {
+				System.out.println("1 이상의 숫자를 입력해주세요.");		
 			}else {
-				for( int i = second ; i <= first; i++) {
-					System.out.print(i+" ");					
-				}
-			}	
-		}	
+				if(first < second) {
+					for( int i = first ; i <= second; i++) {
+						System.out.print(i+" ");
+					}
+				}else {
+					for( int i = second ; i <= first; i++) {
+						System.out.print(i+" ");					
+					}
+				}	
+			}
+		}
 	}
 	
 	public void practice5() {
 	
 		System.out.print("숫자 : ");
 		int dan = sc.nextInt();
-		
-		System.out.printf("==== %d단 ====\n", dan);
-		
-		for(int i = 1; i < 10; i++ ) {
+
+		if( dan < 2 ) {
+			System.out.println("<Error!> 2 이상 정수로 입력해주세요.");
+		}else {
+			
+			System.out.printf("==== %d단 ====\n", dan);
+			
+			for(int i = 1; i < 10; i++ ) {
 			System.out.printf("%d * %d = %d\n", dan, i , dan*i);		
-		}		
+			}
+		}
 	}
 	 
 	
