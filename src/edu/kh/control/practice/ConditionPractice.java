@@ -62,7 +62,7 @@ public class ConditionPractice {
 	
 	public void practice3() {
 		
-		System.out.print("1 ~ 2 사이의 정수 입력 : ");
+		System.out.print("1 ~ 12 사이의 정수 입력 : ");
 		int month = sc.nextInt();
 		
 		int date = 0;
@@ -82,7 +82,7 @@ public class ConditionPractice {
 			System.out.printf("%d월은 잘못 입력된 달입니다.", month);
 			return;
 		}
-		System.out.printf("%d월은 %d까지 있습니다.", month, date);
+		System.out.printf("%d월은 %d일까지 있습니다.", month, date);
 	}
 	
 	public void practice4() {
@@ -109,8 +109,8 @@ public class ConditionPractice {
 			result = "저체중";
 		}
 		
-		System.out.printf("BMI 지수 : %.14f\n", bmi); //?? 소수점 까지 세야하나?
-		System.out.printf(result);		
+		System.out.printf("BMI 지수 : \n"+ bmi); 
+		System.out.println(result);		
 	}
 	
 	public void practice5() {
@@ -132,8 +132,8 @@ public class ConditionPractice {
 		double midScore = mid * 0.2;
 		double lastScore = last * 0.3;
 		double assignmentScore = assignment * 0.3;
-		double attendanceScore = attendance *5 * 0.2;
-		double absentStandard = 20 * 0.7; // 6번
+		double attendanceScore = attendance *5 * 0.2; // 결국 1 곱한거 ㅎㅎ
+		double absentStandard = 20 * (1-0.3); // 6번
 		
 		double total = midScore + lastScore + assignmentScore + attendanceScore;
 		
@@ -158,4 +158,49 @@ public class ConditionPractice {
 		}
 			System.out.println(result);
 	}
+	
+	
+	
+	public void List_sum() {
+		
+		int[] num_list = {1, 2, 3, 4, 5};
+		
+		int elementProduct = 0;  // 원소들의 곱
+        int sumSquare = 0; // 모든 원소의 합 + 제곱 
+        
+        int answer= 0;
+            
+        for ( int i = 0; i < num_list.length; i++ ) {    // 배열에 length
+        	
+        	if( i == 0 ) {
+        		elementProduct = num_list[i];
+        	} else {
+        		elementProduct *= num_list[i];
+        		System.out.println(elementProduct);
+        	}
+        	
+            sumSquare += num_list[i];
+            System.out.println(sumSquare);
+            
+        }
+        
+        sumSquare *= sumSquare;
+        
+        if(elementProduct > sumSquare){
+            answer = 0;
+        }else{
+            answer = 1;
+        }
+         
+        System.out.println("-".repeat(50));
+        System.out.println(answer);
+        System.out.println(sumSquare);
+        System.out.println(elementProduct);
+    }
+	
+	
+	
+	
+	
+	
 }
