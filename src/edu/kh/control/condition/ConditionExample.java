@@ -84,7 +84,7 @@ public class ConditionExample {
 			System.out.println("o입니다.");
 		}
 
-	}
+	} 
 
 	public void ex4() {
 
@@ -140,6 +140,11 @@ public class ConditionExample {
 		System.out.println(season);
 	}
 
+	
+	//------------------------------------------------------------------------------------------------
+	// 과제 
+	
+	
 	public void assignment1() {
 
 		System.out.print("나이 입력 : ");
@@ -189,27 +194,34 @@ public class ConditionExample {
 
 		System.out.print("나이 : ");
 		int age = sc.nextInt();
-		System.out.print("키 : ");
-		Double height = sc.nextDouble();
-
+		
 		String warning;
+		
 
 		if (age < 0 || age > 100) {
 			warning = "잘못 입력하셨습니다.";
-		} else if (age < 12) {
-			warning = "적정 연령이 아닙니다.";
+		
 		} else {
-			if (height < 140.0) {
-				warning = "적정 키가 아닙니다.";
+			System.out.print("키 : ");
+			Double height = sc.nextDouble();
+			
+			if (age < 12) {
+				warning = "적정 연령이 아닙니다.";
 			} else {
-				warning = "탑승 가능";
+				if (height < 140.0) {
+					warning = "적정 키가 아닙니다.";
+				} else {
+					warning = "탑승 가능";
+				}
 			}
 		}
-
+		
 		System.out.println(warning);
 	}
 
 	public void assignment4() {
+		
+		String warning;
 
 		System.out.print("나이 : ");
 		int age = sc.nextInt();
@@ -218,7 +230,8 @@ public class ConditionExample {
 			System.out.println("나이를 잘못 입력 하셨습니다.");
 			return;
 		}
-
+		
+		
 		System.out.print("키 (cm) : ");
 		Double height = sc.nextDouble();
 
@@ -226,8 +239,6 @@ public class ConditionExample {
 			System.out.println("키를 잘못 입력 하셨습니다.");
 			return;
 		}
-
-		String warning;
 
 		if (age >= 12 && height >= 140.0) {
 			warning = "탑승 가능";
@@ -238,9 +249,39 @@ public class ConditionExample {
 		} else {
 			warning = "나이와 키 모두 적절치 않음.";
 		}
+	
+		System.out.println(warning); 
 
-		System.out.println(warning);
-
+		
+		// 위에 내용  if - else 구문으로 다시 정리
+		
+		/*if (age < 0 || age > 100) {
+			System.out.println("나이를 잘못 입력 하셨습니다.");
+			return;
+		} else {
+			System.out.print("키 (cm) : ");
+			Double height = sc.nextDouble();
+			
+			if (height < 0 || height > 250.0) {
+				System.out.println("키를 잘못 입력 하셨습니다.");
+				return;
+			} else {
+				
+				if (age >= 12 && height >= 140.0) {
+					warning = "탑승 가능";
+				} else if (age >= 12 && height < 140.0) {
+					warning = "나이는 적절하나, 키가 적절치 않음";
+				} else if (age < 12 && height >= 140.0) {
+					warning = "키는 적절하나, 나이가 적절하지 않음.";
+				} else {
+					warning = "나이와 키 모두 적절치 않음.";
+				}
+				
+			}
+		}
+		
+		System.out.println(warning);*/
 	}
-
+	
 }
+

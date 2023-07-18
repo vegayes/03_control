@@ -14,7 +14,14 @@ public class ConditionRun {
 //		ce.assignment1();
 //		ce.assignment2();
 //		ce.assignment3();
-		ce.assignment4();
+//		ce.assignment4();
+		
+		
+		SwitchExample se = new SwitchExample();
+		
+		se.ex1();
+		
+		
 	}
 
 }
