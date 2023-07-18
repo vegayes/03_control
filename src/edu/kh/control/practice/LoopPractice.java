@@ -96,6 +96,6 @@ public class LoopPractice {
 			System.out.printf("%d * %d = %d\n", dan, i , dan*i);		
 		}		
 	}
-	
+	 
 	
 }

@@ -248,7 +248,7 @@ public class ForExample {
 				System.out.printf("%d * %d = %d\n", dan, i, dan*i);
 			}
 		}
-	}
+	} 
 	
 	
 	

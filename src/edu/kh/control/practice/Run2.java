@@ -10,6 +10,6 @@ public class Run2 {
 //		lp.practice4();
 		lp.practice5();
 				
-	}
+	} 
 
 }
