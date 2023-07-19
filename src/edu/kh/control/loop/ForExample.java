@@ -217,38 +217,195 @@ public class ForExample {
 		// [구구단 출력]
 		// 2~9사이 수를 하나 입력받아 해당 단을 출력
 		// 단, 입력받은 수가 2 ~ 9 사이 숫자가 아니면 "잘못 입력 하셨습니다."를 출력
-		
+
 		System.out.print("단 입력 : ");
 		int dan = sc.nextInt();
-		
-		
-		if( dan >= 2 && dan <= 9) {
-			
-			for(int i = 1; i <= 9; i++) {		
-				System.out.printf("%d * %d = %d\n", dan, i, dan*i);			
-			}					
-		}else {
+
+		if (dan >= 2 && dan <= 9) {
+
+			for (int i = 1; i <= 9; i++) {
+				System.out.printf("%d * %d = %d\n", dan, i, dan * i);
+			}
+		} else {
 			System.out.println("잘못 입력 하셨습니다.");
 		}
 
 	}
-	
+
 	public void ex15() {
 		// #2) 구구단 출력2 (19단까지)
-	    //	2 ~ 19단 사이 단을 입력 받아서 x 1 ~ x 19까지 출력
+		// 2 ~ 19단 사이 단을 입력 받아서 x 1 ~ x 19까지 출력
 		// 단, 2 ~ 19 사이 단이 입력되지 않으면 "잘못 입력 하셨습니다." 출력
-		
+
 		System.out.print("단 입력 : ");
 		int dan = sc.nextInt();
-		
-		if(dan > 19 || dan < 2) {
-			System.out.println("잘못 입력하셨습니다.");	
-		}else {
-			for ( int i = 1 ; i < 20 ; i++) {
-				System.out.printf("%d * %d = %d\n", dan, i, dan*i);
+
+		if (dan > 19 || dan < 2) {
+			System.out.println("잘못 입력하셨습니다.");
+		} else {
+			for (int i = 1; i < 20; i++) {
+				System.out.printf("%d * %d = %d\n", dan, i, dan * i);
 			}
 		}
-	} 
+	}
+
+	// -------------------------------------------- 중첩 for--------------------------
+
+	public void ex16() {
+		// 구구단 모두 출력하기 ( 2 ~ 9단)
+
+		for (int dan = 2; dan < 10; dan++) { // 2 ~ 9 단까지 차례대로 증가
+
+			System.out.printf("=====%d단=====\n", dan);
+
+			for (int num = 1; num < 10; num++) { // 각 단에 곱해질 수 ~9까지 차례대로 증가
+
+				System.out.printf("%2d X %2d = %2d\n", dan, num, dan * num);
+
+			}
+
+			System.out.println(); // 하나의 단 출력이 끝났을 때 줄바꿈.
+			// 아무내용 없는 println() == 줄바꿈
+
+		}
+
+	}
+
+	public void ex17() {
+		// 구구단 역순 출력
+		// 9단 -> 2단까지 역방향
+		// 곱해지는 수는 1->9 정방향
+		
+		for ( int dan = 9; dan > 1 ; dan--) {
+			System.out.println();
+			
+			for( int num = 1; num < 10; num++) {
+				
+				System.out.printf("%d X %d = %2d  ", dan, num, dan*num);
+			}
+			
+			System.out.println();
+		}
+	}
+
+	public void ex18() {
+		// 2중 for문을 이용해서 다음 모양을 출력하시오.
+
+		// 12345을 6줄!!
+
+		for (int i = 1; i < 6; i++) { // if문은 5바퀴 반복하는 for문
+
+			for (int j = 1; j < 6; j++) { // 1,2,3,4,5 출력할 for문이 필요함.
+
+				System.out.printf("%d", j);
+			}
+
+			System.out.println();
+		}
+
+		System.out.println("=".repeat(50));
+		// 54321 을 3줄!!
+
+		for (int num = 1; num < 4; num++) {
+
+			for (int inner = 5; inner > 0; inner--) {
+
+				System.out.print(inner);
+			}
+			System.out.println();
+		}
+
+	}
+	
+	public void ex19() {
+		/*ex)
+		 * 1
+		 * 12
+		 * 123
+		 * 1234
+		 */
+		
+		for( int i = 1; i < 5; i++) { // 줄반복
+			
+			for (int j = 1; j <= i; j++  ) { // 출력 반복
+				
+				System.out.printf("%d", j);			
+			}
+			System.out.println();
+		}
+	}
+	
+	public void ex20() {
+	
+		for(int i = 4; i > 0; i--) {
+			
+			for(int j = i ; j >0 ; j--) {
+				
+				System.out.print(j);
+				
+			}
+			System.out.println();
+		}
+	}
+	
+	public void ex21() {
+		// 숫자 세기 count 
+		
+		// 1부터 20까지 1씩 증가하면서
+		// 3의 배수의 총 개수 출력
+		// 3의 배수의 합계 출력
+		
+		// 3 6 9 12 15 18 : 6개
+		// 3의 배수 합계 : 63
+		
+		int count = 0;
+		int sum = 0;
+		
+		for(int i = 1 ; i < 21; i++) {	
+			if(i %3 == 0 ) {
+				System.out.print(i + " ");
+				count ++;				
+				sum += i;				
+			}			
+		}
+		System.out.printf(" : %d\n", count);			
+		System.out.printf("3의 배수의 합계 : %d\n", sum);
+	}
+	
+	public void ex22() {
+		// 2중 for문과 count를 이용해서 아래모양 출력하기
+		
+		// 1 2 3 4 
+		// 5 6 7 8 
+		// 9 10 11 12
+		
+		int count = 1; // 숫자 추가
+		
+		for(int i = 1; i < 4; i++) { //3칸
+			for(int j = 1; j < 5; j++ ) { // 4칸
+				System.out.print(count + " ");
+				count++;
+			}
+			System.out.println();
+		}
+	}
+	
+
+	public void ex23() {
+		
+		for( int i = 1; i < 10; i++) {
+			for (int j = 2; j< 10; j++) {
+				System.out.print(j +" X" + i + " = "+ j*i );
+				System.out.print("         ");
+//				System.out.printf("%5d X %d = %d", j,  i ,i *j ," " );	
+			}
+			System.out.println();
+		}
+		
+		
+		
+		
+	}
 	
 	
 	

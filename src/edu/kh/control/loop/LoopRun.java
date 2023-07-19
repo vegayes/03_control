@@ -7,6 +7,7 @@ public class LoopRun {
 		ForExample fx = new ForExample();
 		
 		
+		
 //		fx.ex1();
 //		fx.ex2();
 //		fx.ex3();
@@ -21,8 +22,22 @@ public class LoopRun {
 //		fx.ex12();
 //		fx.ex13();
 //		fx.ex14();
-		fx.ex15();
+//		fx.ex15();
+//		fx.ex16();
+//		fx.ex17();
+//		fx.ex18();
+//		fx.ex19();
+//		fx.ex20();
+//		fx.ex21();
+//		fx.ex22();
+//		fx.ex23();
 		
+		WhileExample we = new WhileExample();
+		
+//		we.ex1();
+//		we.ex2();
+//		we.ex3();
+
 		 
 		
 		
