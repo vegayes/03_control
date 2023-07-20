@@ -160,7 +160,7 @@ public class LoopPractice {
 		}
 	}
 
-	public void practice9() { 
+	public void practice9() {
 
 		System.out.print("정수 입력 : "); // 3
 		int num = sc.nextInt();
@@ -200,28 +200,28 @@ public class LoopPractice {
 	}
 
 	public void practice11() {
-		
-		//정수 입력 : 4
-		//   *
-		//  ***
+
+		// 정수 입력 : 4
+		// *
+		// ***
 		// *****
 		// *******
 
 		System.out.print("정수 입력 :");
 		int num = sc.nextInt();
 
-			// num = 5
-		for (int i = 1; i <= num*2 ; i +=2 ) { // 1 :: 3
-			
-			for (int j = num*2; j >= i; j -= 2) { // 10 8 6 4 2 :: 10 8 6 4 
+		// num = 5
+		for (int i = 1; i <= num * 2; i += 2) { // 1 :: 3
+
+			for (int j = num * 2; j >= i; j -= 2) { // 10 8 6 4 2 :: 10 8 6 4
 				System.out.print(" ");
 			}
-			for ( int a = 1; a <= i; a++) { // 1  :: 1 2
+			for (int a = 1; a <= i; a++) { // 1 :: 1 2
 				System.out.print("*");
 			}
 			System.out.println();
 		}
-		
+
 	}
 
 	public void practice12() {
@@ -275,6 +275,30 @@ public class LoopPractice {
 			}
 			System.out.printf("\ncount : %d", count);
 		}
+	}
+
+	public void practice14() { // 11번 피라미드 다른방법 
+
+		System.out.print("정수를 입력해주세요 :");
+		int num = sc.nextInt();
+
+		for (int i = 0; i < num; i++) {
+
+			for (int j = 0; j < num - 1 - i; j++) {
+
+				System.out.print(" ");
+
+			}
+			for (int a = 0; a < 2 * i + 1; a++) {
+
+				System.out.print("*");
+
+			}
+
+			System.out.println();
+
+		}
+
 	}
 
 }
