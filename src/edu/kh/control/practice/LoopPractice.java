@@ -141,7 +141,7 @@ public class LoopPractice {
 		}
 	}
 
-	public void practice8() { // ******
+	public void practice8() { 
 
 		System.out.printf("정수 입력 : ");
 		int num = sc.nextInt();
