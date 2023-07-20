@@ -30,7 +30,7 @@ public class LoopRun {
 //		fx.ex20();
 //		fx.ex21();
 //		fx.ex22();
-//		fx.ex23();
+		fx.ex23();
 		
 		WhileExample we = new WhileExample();
 		
