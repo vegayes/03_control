@@ -46,21 +46,21 @@ public class SwitchExample {
 		
 		switch(input){
 			
-			case 1: 
-				result = " 빨간색 ";
-				break;
-			case 2: 
-				result = " 주황색 ";
-				break;
-			case 3: 
-				result = " 노란색 ";
-				break;
-			case 4: 
-				result = " 초록색 ";
-				break;
-			default: 
-				result = " 흰색 ";
-				break;
+		case 1: 
+			result = " 빨간색 ";
+			break;
+		case 2: 
+			result = " 주황색 ";
+			break;
+		case 3: 
+			result = " 노란색 ";
+			break;
+		case 4: 
+			result = " 초록색 ";
+			break;
+		default: 
+			result = " 흰색 ";
+			break;
 
 		}
 		

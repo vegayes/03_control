@@ -79,7 +79,8 @@ public class LoopPractice {
 				}
 			}
 		}
-	}
+	} // 두 변수의 값 교환 방법도 해보기! 
+	
 
 	public void practice5() {
 
@@ -150,9 +151,9 @@ public class LoopPractice {
 			System.out.println("정수를 입력해주세요");
 
 		} else {
-			for (int i = num; i > 0; i--) {
+			for (int i = num; i > 0; i--) {   // 그냥 받은 값의 줄만 출력하면 됨.
 
-				for (int j = i; j > 0; j--) {
+				for (int j = i; j > 0; j--) { // 근데 여기서 받은값을 줄어들게 해서 출력해야하므로 기준값을 처음으로 잡았는데,, 
 					System.out.print("*");
 				}
 				System.out.println();
@@ -176,6 +177,30 @@ public class LoopPractice {
 			System.out.println();
 		}
 	}
+	
+	public void practice9Try() {
+		
+		System.out.print("정수 입력 : ");
+		int num = sc.nextInt();
+		
+		for( int i = 1 ; i <= num ; i++) {
+			
+			for( int a = num - i ; a > 0; a--) {
+				
+				System.out.print(" ");
+			}
+			
+			for( int b = 0 ; b < i; b++) {
+				
+				System.out.print("*");
+			}
+			
+			System.out.println();
+			
+		}
+
+	}
+	
 
 	public void practice10() {
 
@@ -198,14 +223,61 @@ public class LoopPractice {
 			System.out.println();
 		}
 	}
+	
+	
+	public void practice10Teacher() {
+
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.print("정수 입력 : ");
+			int input = sc.nextInt();
+			
+			// 위쪽 삼각형
+			for(int row = 1 ; row <= input ; row++) {
+				for(int col = 1 ; col <= row ; col++) {
+					System.out.print("*");
+				}
+				System.out.println(); // 줄바꿈
+			}
+			
+			// 아랫쪽 삼각형
+			for(int row = input - 1; row >= 1 ; row--) {
+				for(int col = 1 ; col <= row ; col++) {
+					System.out.print("*");
+				}
+				System.out.println(); // 줄바꿈
+			}
+			
+			
+			System.out.println("====================");
+			
+			// 줄의 수: input에 2를 곱한값의 -1
+			for(int row = 1; row <= input*2-1; row++) {
+	         
+	    	  if(row < input) {
+	        	  
+	             for(int col=1; col <= row; col++) {
+	                System.out.print("*");
+	             }
+	             
+	          } else {
+	             for(int col=input ; col > row-input; col--) {
+	                System.out.print("*");
+	             }
+	          }
+	          
+	          System.out.println();
+	       }
+
+		
+	}
+	
+	
 
 	public void practice11() {
 
 		// 정수 입력 : 4
-		// *
-		// ***
-		// *****
-		// *******
+		// 피라미드
 
 		System.out.print("정수 입력 :");
 		int num = sc.nextInt();
@@ -224,6 +296,97 @@ public class LoopPractice {
 
 	}
 
+	public void practice11Try() { // 11번 피라미드 다른방법 
+
+		System.out.print("정수를 입력해주세요 :");
+		int num = sc.nextInt();
+
+		for (int i = 0; i < num; i++) {
+
+			for (int j = 0; j < num - 1 - i; j++) {
+
+				System.out.print(" ");
+
+			}
+			for (int a = 0; a < 2 * i + 1; a++) {
+
+				System.out.print("*");
+
+			}
+
+			System.out.println();
+
+		}
+
+	}
+	
+	
+	public void practice11Try2() { // 11번 피라미드 다른방법2
+
+		System.out.print("정수를 입력해주세요 :");
+		int num = sc.nextInt();
+
+		for (int i = 1; i <= num; i++) {
+
+			for (int j = 0; j < num - i; j++) {
+
+				System.out.print(" ");
+
+			}
+			for (int a = 0; a < 2 * i - 1; a++) {
+
+				System.out.print("*");
+
+			}
+
+			System.out.println();
+		}
+	}
+	
+	/* 실습문제 11
+	다음과 같은 실행 예제를 구현하세요.
+	ex.
+	정수 입력 : 4
+	    *
+	   ***
+	  *****
+	 *******
+	*/
+	// 양쪽으로 하나씩 늘어남
+	// 입력한 정수의 줄 만큼
+	public void practice11Teacher() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 : ");
+		// 4입력시
+		int input = sc.nextInt();
+						// 1) 1 <= 4
+		for(int row = 1 ; row <= input ; row++ ) {
+	
+			// if문을 이용한 풀이   1 <= 4 * 2 - 1;
+			for(int col = 1 ; col <= input * 2 - 1; col++) { // 홀수개씩 나오니까.
+				// 마지막 줄의 별 갯수: input에 2를 곱한값의 -1
+				//		row	  col ||      row  col
+				//1)  4 - 1 >= 1  ||  4 + 1 <= 1  true
+				//2)  4 - 1 >= 2  ||  4 + 1 <= 2  true
+				//3)  4 - 1 >= 3  ||  4 + 1 <= 3  true
+				//4)  4 - 1 >= 4  ||  4 + 1 <= 4  false
+				if( input-row>=col || input+row<=col) { 
+					System.out.print(" ");
+					
+				}else{
+					System.out.print("*");
+				}
+			}
+			
+			System.out.println(); // 줄바꿈
+		}
+		
+	}
+	
+	
+	
 	public void practice12() {
 
 		System.out.print("정수 입력 : ");
@@ -264,7 +427,7 @@ public class LoopPractice {
 
 			for (int i = 1; i <= num; i++) {
 
-				if (i % 2 == 0 | i % 3 == 0) {
+				if (i % 2 == 0 || i % 3 == 0) {
 					System.out.print(i + " ");
 
 					if (i % 2 == 0 && i % 3 == 0) {
@@ -277,28 +440,6 @@ public class LoopPractice {
 		}
 	}
 
-	public void practice14() { // 11번 피라미드 다른방법 
 
-		System.out.print("정수를 입력해주세요 :");
-		int num = sc.nextInt();
-
-		for (int i = 0; i < num; i++) {
-
-			for (int j = 0; j < num - 1 - i; j++) {
-
-				System.out.print(" ");
-
-			}
-			for (int a = 0; a < 2 * i + 1; a++) {
-
-				System.out.print("*");
-
-			}
-
-			System.out.println();
-
-		}
-
-	}
 
 }
